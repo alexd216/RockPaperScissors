@@ -14,7 +14,6 @@ scoreHeading.style.fontSize = '20px';
 const computerScoreDisplay = document.createElement('h2');
 computerScoreDisplay.classList.add('computerScoreDisplay');
 computerScoreDisplay.textContent = 'Computer ' + computerScore;
-computerScoreDisplay.style.color = 'red';
 
 const playerScoreDisplay = document.createElement('h2');
 playerScoreDisplay.classList.add('playerDisplayScore');
@@ -55,7 +54,9 @@ displayScore.appendChild(scoreHeading);
             result = 'You win! scissors beats paper';
             playerScore ++;
           }
-          return result;
+          console.log(result);
+          console.log(playerScore);
+
         };
 
 // function to keep the score and communicate the winner
@@ -66,21 +67,6 @@ function winner() {
           return winner;
         };
        
-
-// function to play the game 5 times
-        /*function game() {
-            playerScore = 0;
-            computerScore = 0;
-          let counter = 0;
-          for (counter; counter < 5; counter ++) {
-            let computerSelection = computerPlay();
-            playRound(playerSelection, computerSelection);
-            console.log(result);
-            console.log('player ' + playerScore + ' and computer ' + computerScore );
-          }
-          console.log('the winner is ' + winner());
-        };*/
-
 // functions to assign the player selection to the button 
         function rock() {
             computerSelection = computerPlay();
