@@ -2,7 +2,27 @@
 let playerScore = 0;
 let computerScore = 0;
 
+// create the eventlisteners to add the score to the webpage
+const container = document.querySelector('#displayScore');
 
+const scoreHeading = document.createElement('div');
+scoreHeading.classList.add('scoreHeading');
+scoreHeading.textContent = 'The score is!';
+scoreHeading.style.fontSize = '20px';
+
+
+const computerScoreDisplay = document.createElement('h2');
+computerScoreDisplay.classList.add('computerScoreDisplay');
+computerScoreDisplay.textContent = 'Computer ' + computerScore;
+computerScoreDisplay.style.color = 'red';
+
+const playerScoreDisplay = document.createElement('h2');
+playerScoreDisplay.classList.add('playerDisplayScore');
+playerScoreDisplay.textContent = 'Player ' + playerScore;
+
+scoreHeading.appendChild(computerScoreDisplay);
+scoreHeading.appendChild(playerScoreDisplay);
+displayScore.appendChild(scoreHeading);
 
 // function to randomly select computer choice
         function computerPlay() {
