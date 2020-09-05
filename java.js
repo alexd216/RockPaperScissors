@@ -3,25 +3,26 @@ let playerScore = 0;
 let computerScore = 0;
 
 // create the eventlisteners to add the score to the webpage
-const container = document.querySelector('#displayScore');
+    const container = document.querySelector('#displayScore');
+          
 
-const scoreHeading = document.createElement('div');
-scoreHeading.classList.add('scoreHeading');
-scoreHeading.textContent = 'The score is!';
-scoreHeading.style.fontSize = '20px';
+    const scoreHeading = document.createElement('div');
+    scoreHeading.classList.add('scoreHeading');
+    scoreHeading.textContent = 'The score is!';
+    scoreHeading.style.fontSize = '20px';
 
 
-const computerScoreDisplay = document.createElement('h2');
-computerScoreDisplay.classList.add('computerScoreDisplay');
-computerScoreDisplay.textContent = 'Computer ' + computerScore;
+    const computerScoreDisplay = document.createElement('h2');
+    computerScoreDisplay.classList.add('computerScoreDisplay');
+    computerScoreDisplay.textContent = 'Computer ' + computerScore;
 
-const playerScoreDisplay = document.createElement('h2');
-playerScoreDisplay.classList.add('playerDisplayScore');
-playerScoreDisplay.textContent = 'Player ' + playerScore;
+    const playerScoreDisplay = document.createElement('h2');
+    playerScoreDisplay.classList.add('playerDisplayScore');
+    playerScoreDisplay.textContent = 'Player ' + playerScore;
 
-scoreHeading.appendChild(computerScoreDisplay);
-scoreHeading.appendChild(playerScoreDisplay);
-displayScore.appendChild(scoreHeading);
+    scoreHeading.appendChild(playerScoreDisplay);
+    scoreHeading.appendChild(computerScoreDisplay);
+    displayScore.appendChild(scoreHeading);
 
 // function to randomly select computer choice
         function computerPlay() {
@@ -54,19 +55,18 @@ displayScore.appendChild(scoreHeading);
             result = 'You win! scissors beats paper';
             playerScore ++;
           }
-          console.log(result);
-          console.log(playerScore);
+          return score(playerScore, computerScore);
 
         };
 
 // function to keep the score and communicate the winner
-function winner() {
+    function winner() {
           if (playerScore > computerScore) {
             winner = 'player';
           } else winner = 'computer';
           return winner;
         };
-       
+      
 // functions to assign the player selection to the button 
         function rock() {
             computerSelection = computerPlay();
@@ -85,3 +85,10 @@ function winner() {
           playerSelection = 'scissors';
            playRound(playerSelection,computerSelection);
         };
+
+        //function to keep score updated and declare winner
+    function score(playerScore, computerScore) {
+      playerScoreDisplay.innerHTML = 'Player ' + playerScore;
+      computerScoreDisplay.innerHTML = 'Computer ' + computerScore;
+      displayScore.appendChild(scoreHeading);
+   };
