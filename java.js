@@ -57,17 +57,11 @@ let computerScore = 0;
           }
           return score(playerScore, computerScore);
           if (result == 'draw') {
-            document.innerHTML = 'that was a draw';
+            alert('that was a draw');
           }
         };
 
-// function to keep the score and communicate the winner
-    function winner() {
-          if (playerScore > computerScore) {
-            winner = 'player';
-          } else winner = 'computer';
-          return winner;
-        };
+
       
 // functions to assign the player selection to the button 
         function rock() {
@@ -90,7 +84,15 @@ let computerScore = 0;
 
         //function to keep score updated and declare winner
     function score(playerScore, computerScore) {
+      if (playerScore == 5) {
+        playerScoreDisplay.innerHTML = 'Player wins!';
+        computerScoreDisplay.innerHTML = '';
+      } else if (computerScore == 5) {
+        playerScoreDisplay.innerHTML = '';
+        computerScoreDisplay.innerHTML = 'Computer wins!'
+      } else {
       playerScoreDisplay.innerHTML = 'Player ' + playerScore;
       computerScoreDisplay.innerHTML = 'Computer ' + computerScore;
       displayScore.appendChild(scoreHeading);
+      }
    };
