@@ -56,7 +56,9 @@ let computerScore = 0;
             playerScore ++;
           }
           return score(playerScore, computerScore);
-
+          if (result == 'draw') {
+            document.innerHTML = 'that was a draw';
+          }
         };
 
 // function to keep the score and communicate the winner
